@@ -6,3 +6,14 @@
 
 # a, b, c = 3, 2, 4 -> yes
 # a, b, c = 3, 2, 1 -> no
+
+
+a = int(input('Введите число: '))
+b = int(input('Введите число: '))
+c = int(input('Введите число: '))
+
+if(a*b)/2 != 0: #er c != 0: 
+    a*b <= c; c != 0
+    print('no')
+else:
+    print('yes')
