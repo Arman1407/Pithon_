@@ -7,16 +7,34 @@
 
 
 
+from random import randint
 
+n = int(input('Введите количество монет: '))
 
+eagle = 0
+tails = 0
+# countE = 0
+# countT = 0
 
+for i in range(n):
+    n = randint(0, 1)
+    print(n, end=' ')
+    if i != 1:                      
+        eagle += 1                  # не могу понять почему не суммирует
+    else:
+        tails += 1                  # не могу понять почему не суммирует
+    
+print(min(f'\nнеобходимо перевернуть {eagle} "орлов", {tails} "решек"'))
+   
 
+# if eagle < tails:
+#     print(f'\nПереверните {eagle} "орлов", их меньше всего')
+# elif eagle == tails:
+#     print(f'\nКоличество "орлов" и "решек" одинаково, по {eagle} шт.')
+# else:
+#     print((f'\nПереверните {tails} "решек", их меньше всего'))
 
-
-
-
-
-
+# # print(n.count(0) if n.count(0) < n.count(1) else n.count(1))
 
 
 
