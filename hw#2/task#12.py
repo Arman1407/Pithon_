@@ -5,12 +5,17 @@
 
 
 
+S = int(input('Введите сумму 2-х чисел: '))
+P = int(input('Введите произведение этих чисел: '))
+
+x = 0
+y = 0
 
 
-
-
-
-
+for x in range(S):
+    for y in range(P):
+        if x + y == S and x * y == P:
+            print(f'x = {x}, y = {y}')
 
 
 
