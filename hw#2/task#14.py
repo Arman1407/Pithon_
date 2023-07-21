@@ -6,8 +6,6 @@
 
 N = int(input('Введите число: '))
 
-
-
 stop = 0
 P = 2
 for i in range(N):
