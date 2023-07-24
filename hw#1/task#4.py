@@ -12,15 +12,6 @@ a = int(input('Введите число: '))
 b = int(input('Введите число: '))
 c = int(input('Введите число: '))
 
-
-
-# if c // a or b == 0:
-#     print('yes')
-# elif a*b > c:
-#     print('yes')
-# else:
-#     print('no')
-
 if c < b * a and (c % a == 0 or c % b == 0):
     print('yes')
 else:
