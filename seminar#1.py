@@ -69,11 +69,11 @@
 # - введите YES, нет - NO. В сооветсвии с григорианским календарем, год високосный,
 # если его номер кратен 4, но не кратен 100, а также кратен 400.
 
-year = int(input('Введите год: '))
-if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
-    print('Yes')
-else:
-    print('No')
+# year = int(input('Введите год: '))
+# if year % 4 == 0 and year % 100 != 0 or year % 400 == 0:
+#     print('Yes')
+# else:
+#     print('No')
 
 
 
