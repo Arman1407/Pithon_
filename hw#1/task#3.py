@@ -18,8 +18,13 @@ else:
     print('yes')
 
 
+# или
 
+ticket = input('Введите номер билета: ')
+one = ticket[:3]
+sec = ticket[3:]
 
+one = int(one[0]) + int(one[1]) + int(one[2])
+sec = int(sec[0]) + int(sec[1]) + int(sec[2])
 
-
-
+print('yes' if one == sec else 'no')
