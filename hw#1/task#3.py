@@ -17,6 +17,7 @@ if(res != res1):
 else:
     print('yes')
 
+
 # или
 
 ticket = input('Введите номер билета: ')
