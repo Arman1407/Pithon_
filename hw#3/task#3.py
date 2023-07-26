@@ -23,4 +23,18 @@
 # Пример:
 
 # k = 'ноутбук'
-# # 12
+# 12
+
+diction = {'АВЕИНОРСТAEIOULNSTR': 1, 'ДКЛМПУDG': 2,
+           'БГЁЬЯBCMP': 3, 'ЙЫFHVWY': 4, 'ЖЗХЦЧK': 5, 'ШЭЮJX': 8, 'ФЩЪQZ': 10}
+
+def scrabble(letter):
+    for key in diction:
+        if letter in key:
+            return diction.get(key)
+
+input_word = input("Введите слово: ").upper()
+
+print(f"Вы набрали {sum(map(scrabble, input_word))} очков.")
+
+
