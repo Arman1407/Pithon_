@@ -16,5 +16,6 @@ count = 0
 for i in lst:
     if i == n:
         count += 1
+        
 print(count)
 
