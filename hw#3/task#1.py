@@ -16,6 +16,6 @@ count = 0
 for i in lst:
     if i == n:
         count += 1
-        
-print(count)
+
+print(f'Число {n} встречается в массиве {count} раз')
 
