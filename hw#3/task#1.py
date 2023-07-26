@@ -9,35 +9,11 @@
 
 
 from random import randint
-n = int(input('Введите длину списка: '))
-k = int(input('Введите число: '))
 
-list1 = [randint(-5, 5) for _ in range(n)]
-
-
-
-
-
-# len = []
-
-# for i in len:
-#     print(i)
-
-
-
-# # print(lst := [for _ in range(1, 11)])
-
-
-# print(len(set(lst)))
-
-
-
-# list_1 = [1, 2, 3, 5] # заполненный список
-# print(list_1)
-
-# list_1 = [1, 2, 3, 5] # заполненный список
-# print(*list_1)        # вывод списка только из цифр
-# print(len(list_1))    # Размер списка
-# print(list_1[2])      # Указывает цифру в списке по номеру индекса
-# print(list_1[-1])     # Указывает цифру в списке по номеру индекса
-
+print(lst := [randint(-5, 5) for _ in range(1, 11)])
+n = int(input(f'Введите число: '))
+count = 0
+for i in lst:
+    if i == n:
+        count += 1
+print(count)
