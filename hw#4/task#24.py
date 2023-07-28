@@ -19,8 +19,6 @@ def berries(size):
         new_list.append(random.randint(1, 10))
     return new_list
 
-
-
 size = int(input("Введите количество кустов: "))
 bush = berries(size)
 print(f"Количество ягод на кустах: {bush}")
