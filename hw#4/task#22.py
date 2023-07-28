@@ -4,12 +4,6 @@
 # Пользователь вводит 2 числа. n - кол-во элементов первого множества. m - кол-во элементов второго множества. 
 # Затем пользователь вводит сами элементы множеств.
 
-# def fill_list(size):
-#     new_list = []
-#     for i in range(size):
-#         new_list.append(int(input("Enter number: ")))
-    # return new_list
-
 
 import random
 def fill_list(element):
@@ -22,8 +16,10 @@ def fill_list(element):
 first_set = int(input("Введите количество элементов в 1 наборе: "))
 n = fill_list(first_set)
 print(n)
+print()
 second_set = int(input("Введите количество элементов во 2 наборе: "))
 m = fill_list(second_set)
 print(m)
 
-print(f"Sorted list: {sorted(set(n + m))}")
+print()
+print(f"Новый набор по возрастанию: {sorted(set(n + m))}")
