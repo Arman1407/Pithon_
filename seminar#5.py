@@ -69,7 +69,7 @@
 def index(n):
     if n < 1:
         return
-    i = int(input())
+    i = int(input(f'Введите число: '))
     index(n - 1)
     print(i, end = ' ')
 
