@@ -56,4 +56,3 @@ for i in my_list:
 # # Вариант через min
 # my_list = random_fill_list(list_size)
 # print(f"В массиве :{my_list} ближайшее число к: {find_num} является: {min(my_list, key=lambda x: abs(x-find_num))}.")
-
