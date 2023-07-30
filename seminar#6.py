@@ -12,26 +12,18 @@
 # 6
 # 4 15 43 1 15 1 (каждое число вводится с новой строки)
 
+from random import randint
+lis1 = int(input('Введите колчество элементов списка 1: '))
+print(list_1 := [randint(1, 10) for _ in range(lis1)])
+lis2 = int(input('Введите количество элементов списка 2: '))
+print(list_2 := [randint(1, 10) for _ in range(lis2)])
 
-# import random
-# def fill_list(element):
-#     new_list = []
-#     for i in range(element):
-#         new_list.append(random.randint(1, 20))
-#     return new_list
+list_3 = []
+for i in list_1:         # смотрим все i-элементы в list_1-списке_1
+    if i not in list_2:  # если эти элементы i not-не в list_2-списке_2
+        list_3.append(i) # в list_3-список_3 append-добавляем эти i-элементы
 
-
-# first_set = int(input("Введите количество элементов в 1 наборе: "))
-# n = fill_list(first_set)
-# print(n)
-# print()
-# second_set = int(input("Введите количество элементов во 2 наборе: "))
-# m = fill_list(second_set)
-# print(m)
-
-# print()
-# print(f"Новый набор по возрастанию: {sorted(set(n + m))}")
-
+print(list_3)
 
 ##########################
 
@@ -115,22 +107,22 @@
 #     if n and m = n// == m and n = m//;
 
 
-nums = []
+# nums = []
 
-def findSum(num):
-    sum = 0
-    for i in range(1, num // 2 + 1):
-        if num % i == 0:
-            sum += i
-    return(sum)
+# def findSum(num):
+#     sum = 0
+#     for i in range(1, num // 2 + 1):
+#         if num % i == 0:
+#             sum += i
+#     return(sum)
 
-for i in range(1, 10000):
-    sum1 = findSum(i)
-    sum2 = findSum(sum1)
-    if sum2 == i and sum1 != sum2 and sum1 not in nums:
-        nums.append(i)
-        nums.append(sum1)
-        print(i, sum1)
+# for i in range(1, 10000):
+#     sum1 = findSum(i)
+#     sum2 = findSum(sum1)
+#     if sum2 == i and sum1 != sum2 and sum1 not in nums:
+#         nums.append(i)
+#         nums.append(sum1)
+#         print(i, sum1)
 
 ############
 
