@@ -66,17 +66,26 @@
 # ***Примечание.*** В программе запрещается объявлять массивы и использовать циклы (даже для ввода и вывода).
 
 
+# def index(n):
+#     if n < 1:
+#         return
+#     i = int(input(f'Введите число: '))
+#     index(n - 1)
+#     print(i, end = ' ')
+
+# n = int(input(f'Введите количество элементов: '))
+# index(n)
+
+#######################
+
 def index(n):
     if n < 1:
-        return
-    i = int(input(f'Введите число: '))
-    index(n - 1)
-    print(i, end = ' ')
+        return ''
+    i = input()
+    return index(n - 1) + ' ' + i
 
-n = int(input(f'Введите количество элементов: '))
-index(n)
-
-
+num = int(input('Введите количество элементов: '))
+print(index(num))
 
 
 
