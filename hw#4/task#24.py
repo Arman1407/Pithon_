@@ -32,3 +32,18 @@ else:
             result = summ
             temp = (i-1, i, (i+1) % size)
     print(f"Максимально модуль сможет собрать ягод в количестве - {result} шт.")
+
+####################
+
+import random
+
+print(bushes := [random.randint(1,20) for _ in range(10)])
+
+sum_berries = []
+
+for i in range(len(bushes)):
+    sum_berries.append(bushes[(i-1)%len(bushes)] + bushes[i] + bushes[(i+1)%len(bushes)])
+
+print(max(sum_berries))
+
+

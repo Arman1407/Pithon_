@@ -23,3 +23,5 @@ print(m)
 
 print()
 print(f"Новый набор по возрастанию: {sorted(set(n + m))}")
+
+
