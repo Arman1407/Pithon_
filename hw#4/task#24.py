@@ -19,8 +19,6 @@ def berries(size):
         new_list.append(random.randint(1, 10))
     return new_list
 
-
-
 size = int(input("Введите количество кустов: "))
 bush = berries(size)
 print(f"Количество ягод на кустах: {bush}")
@@ -34,3 +32,18 @@ else:
             result = summ
             temp = (i-1, i, (i+1) % size)
     print(f"Максимально модуль сможет собрать ягод в количестве - {result} шт.")
+
+####################
+
+import random
+
+print(bushes := [random.randint(1,20) for _ in range(10)])
+
+sum_berries = []
+
+for i in range(len(bushes)):
+    sum_berries.append(bushes[(i-1)%len(bushes)] + bushes[i] + bushes[(i+1)%len(bushes)])
+
+print(max(sum_berries))
+
+
