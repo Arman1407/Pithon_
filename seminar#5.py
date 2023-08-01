@@ -78,18 +78,11 @@
 
 #######################
 
-def index(n):
-    if n < 1:
-        return ''
-    i = input()
-    return index(n - 1) + ' ' + i
+# def index(n):
+#     if n < 1:
+#         return ''
+#     i = input()
+#     return index(n - 1) + ' ' + i
 
-num = int(input('Введите количество элементов: '))
-print(index(num))
-
-
-
-
-
-
-
+# num = int(input('Введите количество элементов: '))
+# print(index(num))
