@@ -25,6 +25,8 @@
 # k = 'ноутбук'
 # 12
 
+
+# Вариант1 
 diction = {'АВЕИНОРСТAEIOULNSTR': 1, 'ДКЛМПУDG': 2,
            'БГЁЬЯBCMP': 3, 'ЙЫFHVWY': 4, 'ЖЗХЦЧK': 5, 'ШЭЮJX': 8, 'ФЩЪQZ': 10}
 
@@ -37,9 +39,25 @@ input_word = input("Введите слово: ").upper()
 
 print(f"Вы набрали {sum(map(scrabble, input_word))} очков.")
 
-#########################
+# Вариант 2
+alpha = {'AEIOULNSTRАВЕИНОРСТ': 1,              # создали словари
+         'DGДКЛМПУ': 2,
+         'BCMPБГЁЬЯ': 3,
+         'FHVWYЙЫ': 4,
+         'KЖЗХЦЧ': 5,
+         'JXШЭЮ': 8,
+         'QZФЩЪ': 10}
 
-alpha = {'AEIOULNSTRАВЕИНОРСТ': 1,
+word = input('Введите слово: ')
+total = 0
+for char in word.upper():
+    for letters, score in alpha.items():
+        if char in letters:
+            total += score
+print(f'Слово {word} весит {total} очков')
+
+# Вариант 3
+alpha = {'AEIOULNSTRАВЕИНОРСТ': 1,              # создали словари
          'DGДКЛМПУ': 2,
          'BCMPБГЁЬЯ': 3,
          'FHVWYЙЫ': 4,
@@ -51,14 +69,11 @@ word = input('Введите слово: ')
 total = 0
 new_alpha = {}
 for letters, score in alpha.items():
-    new_alpha.update(dict.fromkeys(letters, score))
+    new_alpha.update(dict.fromkeys(letters, score)) # разбивает строку словаря на отдельные словари - {'a': '1', 'e': '1', 'i': '1', 'o': '1', 'u': '1', 'l': '1', 'n': '1', 's': '1', 't': '1', 'r': '1', и т.д.
 
-for char in word.upper():
+for char in word.upper():            # upper - переводит в регистр 
     total += new_alpha.get(char)
 
-# for char in word.upper():
-#     for letters, score in alpha.items():
-#         if char in letters:
-#             total += score
+
 
 print(f'Слово {word} весит {total} очков')
