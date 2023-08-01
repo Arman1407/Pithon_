@@ -34,14 +34,3 @@ for i in range(n):
     eagle += n
 
 print(f'\nНеобходимо перевернуть {1 if eagle < n // 2 + 1 else 0}')
-
-
-
-
-
-
-
-
-
-
-
