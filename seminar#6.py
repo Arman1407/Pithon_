@@ -1,4 +1,4 @@
-# Задача №39.
+# Задача № 39.
 
 # Даны два массива чисел. Требуется вывести те элементы
 # первого массива (в том порядке, в каком они идут в первом
@@ -12,23 +12,22 @@
 # 6
 # 4 15 43 1 15 1 (каждое число вводится с новой строки)
 
-from random import randint
-lis1 = int(input('Введите колчество элементов списка 1: '))
-print(list_1 := [randint(1, 10) for _ in range(lis1)])
-lis2 = int(input('Введите количество элементов списка 2: '))
-print(list_2 := [randint(1, 10) for _ in range(lis2)])
+# from random import randint
+# lis1 = int(input('Введите колчество элементов списка 1: '))
+# print(list_1 := [randint(1, 10) for _ in range(lis1)])
+# lis2 = int(input('Введите количество элементов списка 2: '))
+# print(list_2 := [randint(1, 10) for _ in range(lis2)])
 
-list_3 = []
-for i in list_1:         # смотрим все i-элементы в list_1-списке_1
-    if i not in list_2:  # если эти элементы i not-не в list_2-списке_2
-        list_3.append(i) # в list_3-список_3 append-добавляем эти i-элементы
+# list_3 = []
+# for i in list_1:         # смотрим все i-элементы в list_1-списке_1
+#     if i not in list_2:  # если эти элементы i not-не в list_2-списке_2
+#         list_3.append(i) # в list_3-список_3 append-добавляем эти i-элементы
 
-print(list_3)
+# print(list_3)
 
 ##########################
 
-# Задача №41.
-
+# Задача № 41.
 # Дан массив, состоящий из целых чисел. Напишите
 # программу, которая в данном массиве определит
 # количество элементов, у которых два соседних и, при
@@ -42,15 +41,18 @@ print(list_3)
 # Вывод:         Вывод:
 # 0              2
 
-
-
-
+# from random import randint
+# lis1 = int(input('Введите колчество элементов списка: '))
+# print(list := [randint(1, 10) for _ in range(lis1)])
+# count = 0
+# for i in range(1, len(list) - 1):
+#     if list[i-1] < list[i] > list[i + 1]:
+#         count += 1
+# print(count)
 
 ############################
 
-
-# Задача №43.
-
+# Задача № 43.
 # Дан список чисел. Посчитайте, сколько в нем пар
 # элементов, равных друг другу. Считается, что любые
 # два элемента, равные друг другу образуют одну пару,
@@ -60,26 +62,35 @@ print(list_3)
 # Ввод:             Вывод:
 # 1 2 3 2 3         2
 
-
+## Вариант 1
 # from random import randint
 
-# numbers = [randint(1, 5) for i in range(int(input("Введите кол-во элементов списка: ")))]
-# print(numbers)
+# n = [randint(1, 5) for i in range(int(input("Введите кол-во элементов списка: ")))]
+# print(n)
 
-# numbers_unique = set(numbers)
-# numbers_unique = list(numbers_unique)
+# n_unique = set(n)
+# n_unique = list(n_unique)
 
 # pairs = 0
-
-# for elem in numbers_unique:
-#     pairs += numbers.count(elem) // 2
+# for i in n_unique:
+#     pairs += n.count(i) // 2
 
 # print(pairs)
 
+## Вариант 2
+# import random
+# print(lst := [random.randint(0, 5) for _ in range(10)])
+
+# print(sum([lst.count(i)//2 for i in set(lst)]))
+# ИЛИ
+# count = 0
+# for i in set(lst):
+#     count += lst.count(i) // 2
+# print(count)
+
 #####################
 
-# Задача №45.
-
+# Задача № 45.
 # Два различных натуральных числа n и m называются
 # дружественными, если сумма делителей числа n
 # (включая 1, но исключая само n) равна числу m и
@@ -98,46 +109,51 @@ print(list_3)
 # Ввод:         Вывод:
 # 300           220 284
 
+## Вариант 1
+# A  = int(input('Введите число: '))
+# for i in range(1, A):
 
-# A = 1000
-# couple = 0
-# n = 0
-# m = 0
-# for i in A
-#     if n and m = n// == m and n = m//;
+#     sum_1 = 0
+#     for j in range(1, i // 2 + 1):
+#         if i % j == 0:
+#             sum_1 += j
 
+#     sum_2 = 0
+#     for k in range(1, sum_1 // 2 + 1):
+#         if sum_1 % k == 0:
+#             sum_2 += k
 
-# nums = []
+#     if sum_2 == i and sum_1 < sum_2:
+#         print(sum_1, sum_2)      
 
-# def findSum(num):
-#     sum = 0
+## Вариан 2
+# def fsum(num: int):
+#     sum_k = 0
 #     for i in range(1, num // 2 + 1):
 #         if num % i == 0:
-#             sum += i
-#     return(sum)
+#             sum_k += i
+#     return sum_k
 
-# for i in range(1, 10000):
-#     sum1 = findSum(i)
-#     sum2 = findSum(sum1)
+# A  = int(input('Введите число: '))
+# couple = {i: fsum(i) for i in range(1, A)}
+# for j, sum_k in couple.items():
+#     if j == couple.get(sum_k) and j < sum_k:
+#         print(j, sum_k)
+
+## Вариант 3
+# nums = []
+# def fsum(num):
+#     sum_k = 0
+#     for i in range(1, num // 2 + 1):
+#         if num % i == 0:
+#             sum_k += i
+#     return(sum_k)
+
+# A  = int(input('Введите число: '))
+# for i in range(1, A):
+#     sum1 = fsum(i)
+#     sum2 = fsum(sum1)
 #     if sum2 == i and sum1 != sum2 and sum1 not in nums:
 #         nums.append(i)
 #         nums.append(sum1)
 #         print(i, sum1)
-
-############
-
-# Решение через словарь
-
-
-
-
-
-
-
-
-
-
-
-
-
-
