@@ -5,3 +5,20 @@
 #         5
 #         15
 # Вывод:  [1, 9, 13, 14, 19] выводим индексы которые лежат в диапозоне (5 - 15)
+
+
+def range_serch(lst, a, b):
+    result = []
+    for i in range(len(lst)):
+        if a <= lst[i] <= b:
+            result.append(i)
+    return result
+
+from random import randint
+lst = [randint(1, 50) for i in range(int(input("Введите кол-во элементов списка: ")))]
+print(lst)
+
+min_n = int(input("Введите минимальное значение диапазона: "))
+max_n = int(input("Введите максимальное значение диапазона: "))
+
+print(f"Индексы элементов принадлежащих заданному диапазону: {range_serch(lst, min_n, max_n)}")
