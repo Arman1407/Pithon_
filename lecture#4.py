@@ -177,7 +177,7 @@
 #     - позволяет читать данные из файла
 #     - если файла нет, выдаст ошибку
 
-# w - открытие для записи данных
+# w - открытие для записи данных (перзаписывает т.е. стирает старое и добавляет новое)
 #     - записывает данные и создает файл, если его не существует
  
 # w+ - 
@@ -187,6 +187,55 @@
 # r+ - 
 #     - открывает файл для чтения и дописывает в него
 #     - если файла нет, выдаст ошибку
+
+# # создание файла
+# file = open('new.txt', 'a', encoding='UTF-8')  # encoding='UTF-8' - переводит в кириллицу, new.txt - название файла
+# file.write('pole, russkoe pole\n')             # записывает строку: 'pole, russkoe pole' - это заносим в файл в виде строки
+# file.close()                                   # закрывает работу с файлом
+
+# \n и \t - переносят запись на новую строчку. 
+
+# # чтение файл а
+# # read
+# file = open('new.txt', 'r', encoding='UTF-8')
+# data = file.read()  # read - показывает в консоли одну строку      
+# file.close()    
+# print(data)         # pole, russkoe pole
+# print(data.__repr__())  # показывает текст как он есть, т.е. одной строкой - 'pole, russkoe pole\npole, russkoe pole\n\tpole, russkoe pole\n\tpole, russkoe pole\n'
+# print(data.split('\n')) # возвращает список строк - ['pole, russkoe pole', 'pole, russkoe pole', '\tpole, russkoe pole', '\tpole, russkoe pole', '']
+
+# # readline
+# file = open('new.txt', 'r', encoding='UTF-8')
+# data1 = file.readline()  # read - считывает информацию построчно      
+# data2 = file.readline()
+# data3 = file.readline()
+# data4 = file.readline()
+# file.close()    
+# print(data1[:-1])           # pole, russkoe pole \\\\\\ [:-1] - удаляет пустую строку между строками
+# print(data2)                # pole, russkoe pole  
+
+# print(data3)                    # pole, russkoe pole
+
+# print(data4)                    # pole, russkoe pole
+
+# # readlines
+# file = open('new.txt', 'r', encoding='UTF-8')
+# data = file.readlines()  # read - показывает список строк   ['pole, russkoe pole\n', 'pole, russkoe pole\n', '\tpole, russkoe pole\n', '\tpole, russkoe pole\n']
+# file.close()  
+# data = list(map(lambda x: x.strip(), data))  # убирает слэши: ['pole, russkoe pole', 'pole, russkoe pole', 'pole, russkoe pole', 'pole, russkoe pole']
+# print(data)     
+
+# data[1] = 'FFFFFFFFFFFFFFFFF'
+# data = '\n'.join(data)              # возвращает слэши
+
+# file = open('new.txt', 'w', encoding='UTF-8')
+# file.write(data)
+# file.close()
+
+############
+# # контекстный менеджер
+# with open('new.txt', 'w', encoding='UTF-8') as file:   # закрывает файл автоматически, когда выходим из тела контекстного менеджера, т.е. из отступа
+#     file.write(data)
 
 # Примеры работы с файлами
 
@@ -203,8 +252,6 @@
 # with open('file.txt', 'w') as data:  # открывает файл с именем: data
 #     data.write('line 1\n')
 #     data.write('line 2\n')
-
-# print(56)
 
 ## 3
 # режим чтения
