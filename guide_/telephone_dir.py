@@ -30,11 +30,11 @@ ______________________________________________________
 
 file = 'guide_\phone.txt'
 
-def add_contact(contact, file):
+def add_contact(contact, file):                         # добавляет контакты в справочник
     with open(file, 'a', encoding='UTF-8') as add_c:
         add_c.write(f'\n{contact}')
 
-def delete_contact(contact, file):
+def delete_contact(contact, file):                      # удаляет выбранные контакты из справочника
     with open(file, "r", encoding='UTF-8') as f:
         lines = f.readlines()
     with open(file, "w", encoding='UTF-8') as f:
@@ -42,7 +42,7 @@ def delete_contact(contact, file):
             if line != contact:
                 f.write(line)
 
-def change_contact(file):
+def change_contact(file):                               # изменяет контакты в справочнике
     with open(file, "r", encoding='UTF-8') as f:
         with open(file, "r", encoding='UTF-8') as f:
             lines = f.readlines()
@@ -55,7 +55,7 @@ def change_contact(file):
         for line in lines:
             f.write(line)
 
-def find_contact(file):
+def find_contact(file):                                 # осуществляет поиск контактов по справочнику
     with open(file, "r", encoding='UTF-8') as f:
         lines = f.readlines()
         name = input("Введите параметр поиска (имя, номер, комментарий): ")
@@ -65,7 +65,7 @@ def find_contact(file):
         else:
             print("Такого контакта нет")
 
-def all_contacts(file):
+def all_contacts(file):                                 # выводит весь справочник
     with open(file, "r", encoding='UTF-8') as f:
             lines = f.readlines()
             print("Список контактов \n")
