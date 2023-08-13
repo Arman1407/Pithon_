@@ -7,7 +7,7 @@ encodinf = "UTF-8"
 справочник должен содержать данные:
 имя, телефон, комментарий
 хранится в файле phone.txt
-Кирилл; 899999999; Семинары
+пример записи - Кирилл; 899999999; Семинары
 
 выводить все контакты на экран
 добавить контакт
@@ -19,86 +19,97 @@ encodinf = "UTF-8"
 можно сделать копию, поработать и сохранить
 """
 
-file = 'Python_lesson_new\guide_tel\guide.txt'
-contact = ['Кирukghukukа; 89032621542; рабочий']
+"""
+______________________________________________________
+Данный телефонный справочник разработан группой студентов:
+Коротеев Дмитрий
+Иван Андронов
+Арман Джамбулов
+______________________________________________________
+"""
 
-def add_contact(contact, file):                                 # добавляет котакты guide.txt
-    with open (file, 'a', encoding='UTF-8') as add_c:
-        add_c.writelines(f'\n{contact}')
+file = 'guide_\phone.txt'
 
-def delete_contact(contact, file):                              # удаляет контакты
+def add_contact(contact, file):                         # добавляет контакты в справочник
+    with open(file, 'a', encoding='UTF-8') as add_c:
+        add_c.write(f'\n{contact}')
+
+def delete_contact(contact, file):                      # удаляет выбранные контакты из справочника
     with open(file, "r", encoding='UTF-8') as f:
         lines = f.readlines()
     with open(file, "w", encoding='UTF-8') as f:
         for line in lines:
-            if line.strip("\n") != contact:
+            if line != contact:
                 f.write(line)
 
-def change_contact(file):                                       # изменяет контакты
+def change_contact(file):                               # изменяет контакты в справочнике
     with open(file, "r", encoding='UTF-8') as f:
-        lines = f.readlines()
-        data = list(enumerate(lines))
-        for line in data:
-            print(line)
-        number = int(input("Введите порядковый номер конатакта который хотите изменить: "))
+        with open(file, "r", encoding='UTF-8') as f:
+            lines = f.readlines()
+            for i in range(1, len(lines)):
+                print(f"{i}.", lines[i])
+        number = int(input("Введите порядковый номер контакта который хотите изменить: "))
         changes = input("Введите изменение в формате <Имя; Номер; Комментарий> : ")
         lines[number] = (f"{changes}\n")
     with open(file, "w", encoding='UTF-8') as f:
         for line in lines:
             f.write(line)
 
-def find_contact(contact, file):                                # находит контакт по одному из критериев
+def find_contact(file):                                 # осуществляет поиск контактов по справочнику
     with open(file, "r", encoding='UTF-8') as f:
         lines = f.readlines()
         name = input("Введите параметр поиска (имя, номер, комментарий): ")
         for line in lines:
             if name in line.split(';'):
                 print(line)
+        else:
+            print("Такого контакта нет")
 
-action = ''
-while action != '6':
+def all_contacts(file):                                 # выводит весь справочник
+    with open(file, "r", encoding='UTF-8') as f:
+            lines = f.readlines()
+            print("Список контактов \n")
+            for i in range(1, len(lines)):
+                print(f"{i}.", lines[i])
+
+action = 0
+while action != 6:
     print(
         """
-    1. добавить контакт
-    2. удалить контакт
-    3. изменить контакт
-    4. найти контакт 
-    5. открыть сохранить файл целиком
+        _____Меню_____\n
+    1. Добавить контакт
+    2. Удалить контакт
+    3. Изменить контакт
+    4. Найти контакт
+    5. Показать все контакты
     6. выход из меню
     """
     )
-    action = input('Введите номер действия: ')
-    if action == '1':
-        name = input('Введите имя: ')
-        number = input('Введите номер телефона: ')
-        comment = input("Введите комментарий: ")
-        add_contact(f'{name};{number};{comment}', file)
-        print(f"\nКонтакт '{name};{number};{comment}' успешно добавлен.\n")
+    action = int(input('Введите номер действия: '))
+    if action == 1:
+        name = input("Введите имя контакта: ")
+        number = input("Введите номер контакта: ")
+        comment = input("Введите комментакрий к контакту: ")
+        contact = f"{name}; {number}; {comment}"
+        add_contact(contact, file)
+        print(f"\nКонтакт '{name}; {number}; {comment}' успешно добавлен.\n")
 
-    elif action == '2':
-        contact = input("Введите данные контакта (имя; номер; комментарий), который хотите удалить: ")
-        delete_contact(contact, file)
+    if action == 2:
+        with open(file, "r", encoding='UTF-8') as f:
+            lines = f.readlines()
+            data = {}
+            for i in range(1, len(lines)):
+                data[i] = lines[i]
+                print(f"{i}.", lines[i])
+        number = int(input("Введите порядковый номер контакта, который хотите удалить: "))
+        delete_contact(data[number], file)
+        print(f"\nКонтакт удален. \n")
 
-    elif action == '3':
-        contact = input("Введите данные контакта (имя; номер; комментарий), который хотите изменить: ")
+    if action == 3:
         change_contact(file)
 
-    elif action == '4':
-        contact = input("Введите данные контакта (имя; номер; комментарий), который хотите найти: ")
-        find_contact(contact, file)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    if action == 4:
+        find_contact(file)
+    
+    if action == 5:
+        all_contacts(file)
