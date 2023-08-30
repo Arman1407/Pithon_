@@ -10,7 +10,7 @@ class Contact:
         return f'{self.name} {self.phone} {self.comment}'
 
 class PhoneBook:
-    def __init__(self, phone_book: dict = None, path: str = 'Python_\guide_class\phone_.txt'):
+    def __init__(self, phone_book: dict = None, path: str = 'Pithon_\guide_class\phone_.txt'):
         self.path = path
         if phone_book is None:
             self.phone_book: dict[int, Contact] = {}
