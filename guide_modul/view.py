@@ -16,7 +16,7 @@ def main_menu():                                # функция для выво
 def print_message(msg: str):                     # функция для печати сообщений
     print('\n' + '=' * len(msg))
     print(msg)
-    print('*' * len(msg) + '\n')
+    print('=' * len(msg) + '\n')
 
 def show_book(book: dict[int, list[str]], msg: str):  # функция для печати справочника или сообщения об ошибке
     if book:
