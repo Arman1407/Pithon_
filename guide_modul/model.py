@@ -1,6 +1,6 @@
 from copy import deepcopy
 
-PATH = 'Python_\guide_class\phone_.txt'
+PATH = 'Pithon_\guide_modul\phone_one.txt'
 phone_book = {}
 original_book = {}
 
