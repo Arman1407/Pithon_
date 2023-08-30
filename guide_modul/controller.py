@@ -45,17 +45,3 @@ def start():
                         view.print_message(text.save_successful)
                 view.print_message(text.exit_program)
                 break 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
